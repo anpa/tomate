@@ -27,10 +27,7 @@ final class PomodoroTimer {
     }
 
     var menuBarTitle: String {
-        if isRunning || remaining < Self.focusDuration {
-            return timeString
-        }
-        return "Tomate"
+        timeString
     }
 
     private var endDate: Date?

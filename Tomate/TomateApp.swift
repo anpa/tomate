@@ -16,13 +16,18 @@ struct TomateApp: App {
             ContentView()
                 .environment(appDelegate.timer)
         } label: {
-            Label {
-                Text(appDelegate.timer.menuBarTitle)
-            } icon: {
-                Image("MenuBarIcon")
-                    .renderingMode(.original)
-            }
+            MenuBarTimerLabel(timer: appDelegate.timer)
         }
         .menuBarExtraStyle(.window)
+    }
+}
+
+private struct MenuBarTimerLabel: View {
+    var timer: PomodoroTimer
+
+    var body: some View {
+        Text(timer.timeString)
+            .monospacedDigit()
+            .font(.system(size: 13, weight: .semibold, design: .rounded))
     }
 }
