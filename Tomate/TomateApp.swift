@@ -9,14 +9,19 @@ import SwiftUI
 
 @main
 struct TomateApp: App {
-    @State private var timer = PomodoroTimer()
+    @NSApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
 
     var body: some Scene {
         MenuBarExtra {
             ContentView()
-                .environment(timer)
+                .environment(appDelegate.timer)
         } label: {
-            Label(timer.menuBarTitle, systemImage: timer.isRunning ? "tomato.fill" : "tomato")
+            Label {
+                Text(appDelegate.timer.menuBarTitle)
+            } icon: {
+                Image("MenuBarIcon")
+                    .renderingMode(.original)
+            }
         }
         .menuBarExtraStyle(.window)
     }

@@ -12,12 +12,20 @@ struct ContentView: View {
     @Environment(PomodoroTimer.self) private var timer
 
     var body: some View {
-        VStack(spacing: 28) {
-            Text("Focus")
-                .font(.system(size: 12, weight: .medium, design: .rounded))
-                .foregroundStyle(.white.opacity(0.45))
-                .tracking(1.4)
-                .textCase(.uppercase)
+        VStack(spacing: 20) {
+            VStack(spacing: 8) {
+                Image("Tomato")
+                    .resizable()
+                    .interpolation(.high)
+                    .scaledToFit()
+                    .frame(width: 36, height: 36)
+
+                Text("Focus")
+                    .font(.system(size: 12, weight: .medium, design: .rounded))
+                    .foregroundStyle(.white.opacity(0.45))
+                    .tracking(1.4)
+                    .textCase(.uppercase)
+            }
 
             ZStack {
                 Circle()
