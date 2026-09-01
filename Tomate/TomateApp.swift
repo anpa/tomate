@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct TomateApp: App {
+    @State private var timer = PomodoroTimer()
+
     var body: some Scene {
-        WindowGroup {
+        MenuBarExtra {
             ContentView()
+                .environment(timer)
+        } label: {
+            Label(timer.menuBarTitle, systemImage: timer.isRunning ? "tomato.fill" : "tomato")
         }
+        .menuBarExtraStyle(.window)
     }
 }
