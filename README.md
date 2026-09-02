@@ -1,8 +1,10 @@
 # Tomate
 
-A minimalist, **open source** macOS menu bar Pomodoro timer. Tomate lives in the menu bar, shows the remaining time at a glance, and opens a Liquid Glass popover for play, pause, and skip.
+Tomate (tomato in portuguese) is a minimalist macOS menu bar Pomodoro timer. Tomate lives in the menu bar, shows the remaining time at a glance, and opens a Liquid Glass popover for play, pause, and skip.
 
-**[github.com/anpa/tomate](https://github.com/anpa/tomate)** · MIT License
+<p align="center">
+  <img src="./docs/screenshot.png" alt="Tomate" width="256" />
+</p>
 
 ## Features
 
@@ -13,6 +15,7 @@ A minimalist, **open source** macOS menu bar Pomodoro timer. Tomate lives in the
 - Liquid Glass controls (Play/Pause, Skip, Quit)
 - Runs as a menu bar extra (no Dock icon or main window)
 - Date-based countdown so time stays accurate when the popover is closed
+- Custom sounds: Alarm.mp3 when a focus session ends, Break.mp3 when a break ends
 
 ## Requirements
 
@@ -47,6 +50,7 @@ Tomate/
   ContentView.swift     # Popover UI
   PomodoroTimer.swift   # 25-minute session logic
   Assets.xcassets/      # App icon, menu bar art, tomato image
+  Resources/            # Audio: Alarm.mp3, Break.mp3
 Tomate.xcodeproj/
 ```
 
