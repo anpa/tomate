@@ -34,6 +34,11 @@ final class PomodoroTimer {
     private(set) var kind: SessionKind = .focus
     private(set) var remaining: TimeInterval = SessionKind.focus.duration
     private(set) var isRunning = false
+    private(set) var intent: String = ""
+
+    func setIntent(_ text: String) {
+        intent = text
+    }
 
     var progress: CGFloat {
         let duration = kind.duration
@@ -160,9 +165,11 @@ final class PomodoroTimer {
         case .shortBreak:
             cycle += 1
             kind = .focus
+            intent = ""
         case .longBreak:
             cycle = 1
             kind = .focus
+            intent = ""
         }
 
         remaining = kind.duration

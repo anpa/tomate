@@ -60,6 +60,24 @@ struct ContentView: View {
                 .font(.system(size: 12, weight: .semibold, design: .rounded))
                 .foregroundStyle(.primary)
 
+            // Intent row — shown only during focus sessions
+            if timer.kind == .focus {
+                HStack(spacing: 8) {
+                    Image(systemName: "target")
+                        .foregroundStyle(.primary)
+                        .font(.system(size: 11, weight: .medium))
+
+                    TextField("What will you focus on?", text: intentBinding)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 12, design: .rounded))
+                        .disabled(timer.isRunning)
+                        .frame(maxWidth: .infinity)
+                }
+                .padding(.horizontal, 12)
+                .padding(.vertical, 8)
+                .glassEffect(.regular, in: .capsule)
+            }
+
             GlassEffectContainer(spacing: 14) {
                 HStack(spacing: 14) {
                     Button("Play", systemImage: timer.isRunning ? "pause.fill" : "play.fill") {
@@ -102,6 +120,13 @@ struct ContentView: View {
 
     private var skipHelp: String {
         timer.kind.isBreak ? "Skip break" : "Skip session"
+    }
+
+    private var intentBinding: Binding<String> {
+        Binding(
+            get: { timer.intent },
+            set: { timer.setIntent($0) }
+        )
     }
 
     private func quit() {

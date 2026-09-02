@@ -8,6 +8,7 @@ A minimalist, **open source** macOS menu bar Pomodoro timer. Tomate lives in the
 
 - Menu bar countdown (`MM:SS`) so the timer stays visible while you work
 - 25-minute focus sessions with play/pause and skip
+- Set a focus intent before starting each session (locked once running)
 - Circular remaining-time ring in a compact popover
 - Liquid Glass controls (Play/Pause, Skip, Quit)
 - Runs as a menu bar extra (no Dock icon or main window)
