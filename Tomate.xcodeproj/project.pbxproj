@@ -8,12 +8,26 @@
 
 /* Begin PBXFileReference section */
 		C2DD9CBD3047176100A63D55 /* Tomate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tomate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AlarmMP3Ref3047176100A63D55 /* Alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Alarm.mp3; sourceTree = "<group>"; };
+		BreakMP3Ref3047176100A63D55 /* Break.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Break.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		C2DD9CBF3047176100A63D55 /* Tomate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			children = (
+				ResourcesRef3047176100A63D55 /* Resources */,
+			);
 			path = Tomate;
+			sourceTree = "<group>";
+		};
+		ResourcesRef3047176100A63D55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AlarmMP3Ref3047176100A63D55 /* Alarm.mp3 */,
+				BreakMP3Ref3047176100A63D55 /* Break.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -109,6 +123,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AlarmMP3Build3047176100A63D55 /* Alarm.mp3 in Resources */,
+				BreakMP3Build3047176100A63D55 /* Break.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +345,11 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+/* Begin PBXBuildFile section */
+		AlarmMP3Build3047176100A63D55 /* Alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AlarmMP3Ref3047176100A63D55 /* Alarm.mp3 */; };
+		BreakMP3Build3047176100A63D55 /* Break.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BreakMP3Ref3047176100A63D55 /* Break.mp3 */; };
+/* End PBXBuildFile section */
+
 	};
 	rootObject = C2DD9CB53047176100A63D55 /* Project object */;
 }

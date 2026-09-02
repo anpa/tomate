@@ -53,10 +53,6 @@ final class PomodoroTimer {
         return String(format: "%02d:%02d", minutes, seconds)
     }
 
-    var menuBarTitle: String {
-        timeString
-    }
-
     var phaseTitle: String {
         switch kind {
         case .focus:
@@ -156,7 +152,11 @@ final class PomodoroTimer {
 
     private func advance(playSound: Bool) {
         if playSound {
-            NSSound.beep()
+            if kind == .focus {
+                playCustomSound(named: "Alarm")
+            } else {
+                playCustomSound(named: "Break")
+            }
         }
 
         switch kind {
@@ -174,6 +174,10 @@ final class PomodoroTimer {
 
         remaining = kind.duration
         isRunning = false
+    }
+
+    private func playCustomSound(named: String) {
+        NSSound(named: named)?.play()
     }
 
     private func beginBackgroundActivity() {
